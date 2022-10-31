@@ -14,7 +14,7 @@ diesel::table! {
     players (id) {
         id -> Int4,
         name -> Text,
-        team -> Int4,
+        team_id -> Int4,
     }
 }
 
@@ -32,7 +32,7 @@ diesel::table! {
     }
 }
 
-diesel::joinable!(players -> teams (team));
+diesel::joinable!(players -> teams (team_id));
 
 diesel::allow_tables_to_appear_in_same_query!(
     players,
