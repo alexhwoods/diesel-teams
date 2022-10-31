@@ -11,6 +11,14 @@ pub mod sql_types {
 }
 
 diesel::table! {
+    players (id) {
+        id -> Int4,
+        name -> Text,
+        team -> Int4,
+    }
+}
+
+diesel::table! {
     use diesel::sql_types::*;
     use super::sql_types::League;
     use super::sql_types::Division;
@@ -23,3 +31,10 @@ diesel::table! {
         division -> Division,
     }
 }
+
+diesel::joinable!(players -> teams (team));
+
+diesel::allow_tables_to_appear_in_same_query!(
+    players,
+    teams,
+);
