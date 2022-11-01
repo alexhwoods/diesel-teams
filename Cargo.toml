@@ -1,5 +1,5 @@
 [package]
-name = "diesel-teams"
+name = "diesel_teams"
 version = "0.1.0"
 edition = "2021"
 
@@ -7,4 +7,5 @@ edition = "2021"
 
 [dependencies]
 diesel = { version = "2.0.0", features = ["postgres"] }
+diesel-derive-enum = { version = "2.0.0-rc.0", features = ["postgres"] }
 dotenvy = "0.15"
